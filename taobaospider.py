@@ -30,7 +30,6 @@ def search():
     #     return search()
 
 def next_page(pageindex):
-    print('正在翻页', pageindex)
     try:
         input = wait.until(
             EC.presence_of_element_located((By.CSS_SELECTOR, '#mainsrp-pager > div > div > div > div.form > input'))
@@ -70,7 +69,6 @@ def gospider():
         for i in range(2, total + 1):
             next_page(i)
     except Exception:
-        print('出错啦')
     finally:
         browser.close()
 
